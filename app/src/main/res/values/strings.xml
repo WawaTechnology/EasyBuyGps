@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EasyBuyGps</string>
+    <string name="prompt_email"> Email </string>
+        
+    <string name="prompt_password"> Password </string>
+    <string name="action_sign_in_short"> sign in </string>
+    <string name="title_activity_maps">Map</string>
+    <string name="service_not_available">Service not Available</string>
+    <string name="invalid_lat_long_used">Invalid Latitude and longitude Used</string>
+    <string name="no_address_found">No Address Found</string>
+    <string name="address_found">Address Found</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.example.unsan.gpstracker.MainActivity">
+
+
+    <LinearLayout
+        android:layout_marginTop="45dp"
+
+        android:id="@+id/layout1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/login_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/email"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/prompt_email" />
+        <ImageView
+            android:id="@+id/deleteEmail"
+            android:src="@drawable/shanchu"
+            android:layout_marginLeft="10dp"
+            android:layout_width="17dp"
+            android:layout_height="17dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/layout1"
+        android:id="@+id/layout2"
+        android:gravity="center_vertical"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/login_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/psd"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword"
+            android:imeActionLabel="@string/action_sign_in_short"
+
+            android:imeOptions="actionUnspecified" />
+
+        <ImageView
+            android:id="@+id/deletePsd"
+            android:src="@drawable/shanchu"
+            android:layout_marginLeft="10dp"
+            android:layout_width="17dp"
+            android:layout_height="17dp" />
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/submit"
+        android:textColor="@android:color/white"
+        android:background="@drawable/round_login"
+        android:text="Submit"/>
+
+</LinearLayout>

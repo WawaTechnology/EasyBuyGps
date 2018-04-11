@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_width="180dp"
+        android:padding="12dp"
+        android:id="@+id/start_trip"
+        android:layout_height="wrap_content"
+        android:text="Start New Trip"></Button>
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:id="@+id/cancel_trip"
+        android:text="Cancel Ongoing Trip"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_width="180dp"
+        android:padding="12dp"
+        android:id="@+id/ongoing"
+        android:layout_height="wrap_content"
+        android:text="OnGoing Trip"></Button>
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_width="180dp"
+        android:padding="12dp"
+        android:id="@+id/history"
+        android:layout_height="wrap_content"
+        android:text="Trip history"></Button>
+
+
+</LinearLayout>

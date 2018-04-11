@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "509398741819",
+    "firebase_url": "https://easybuygps.firebaseio.com",
+    "project_id": "easybuygps",
+    "storage_bucket": "easybuygps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509398741819:android:ae528104a81ae2c8",
+        "android_client_info": {
+          "package_name": "com.example.unsan.easybuygps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509398741819-7bfqa31l8lqphv0olko0f8rebdilfm2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0H_4L0lJj9pY5qlrsBstxW-VC2i04Gow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item
+            android:id="@+id/searchid"
+            android:title="@string/search"
+            android:icon="@android:drawable/ic_menu_search"
+            app:showAsAction="always"
+
+            />
+        <item
+                android:id="@+id/sortadd"
+                android:title="Sort By Address"
+                android:text="Sort by Address"
+                app:showAsAction="never"></item>
+        <item
+            android:id="@+id/sortrest"
+            android:title="Sort By Restaurant"
+            android:text="Sort by Restaurant"
+            app:showAsAction="never"></item>
+
+</menu>

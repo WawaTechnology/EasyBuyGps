@@ -44,7 +44,13 @@ class CustomAdapter extends ArrayAdapter<CustomerNode> {
         final CustomerNode customerNode=objects.get(position);
         final Customer c=customerNode.getCustomer();
         TextView tv=(TextView)listV.findViewById(R.id.custnamedisp);
+
         if(c!=null)
+            if(HomePage.sorted)
+            {
+                tv.setText(customerNode.getCustomer().Address);
+            }
+            else
             tv.setText(customerNode.getRestaurantName());
         else
             tv.setText("No customer Found");

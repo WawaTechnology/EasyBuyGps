@@ -1,8 +1,11 @@
 package com.example.unsan.easybuygps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,6 +31,7 @@ public class HomePage extends AppCompatActivity  {
 
     ListView listView;
     DatabaseReference customerReference;
+    public static boolean sorted;
 
 
     List<CustomerNode> customerList;
@@ -46,36 +50,6 @@ public class HomePage extends AppCompatActivity  {
 
 
         listView=(ListView) findViewById(R.id.list_view);
-
-
-
-
-       /* for(int i=0;i<50;i++)
-        {
-            Random rand = new Random();
-
-            // nextInt is normally exclusive of the top value,
-            // so add 1 to make it inclusive
-            int randomNum = rand.nextInt((30 - 1) + 1) + 1;
-            Log.d("checkr",randomNum+"");
-            String name="customer "+(i+1);
-            String address="53 Grange Road";
-            String phone="85717485";
-            Log.d("cl",name);
-
-            Customer c=new Customer(carList.get(randomNum-1),name,address,phone);
-            customerList.add(c);
-
-
-        }
-        */
-
-
-
-
-
-
-      ;
         customAdapter=new CustomAdapter(HomePage.this,R.layout.simple_display,customerList);
         listView.setAdapter(customAdapter);
         customAdapter.notifyDataSetChanged();
@@ -84,6 +58,69 @@ public class HomePage extends AppCompatActivity  {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.searchid: {
+                Intent intent = new Intent(HomePage.this, SearchResultsActivity.class);
+                startActivity(intent);
+                break;
+
+
+            }
+            case R.id.sortadd:
+            {
+                getCustomerAddress();
+                break;
+
+            }
+            case R.id.sortrest:
+            {
+                getCustomerData();
+                break;
+            }
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void getCustomerAddress() {
+        sorted =true;
+        customerList.clear();
+        customerReference.orderByChild("Address").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                    for(DataSnapshot ds:dataSnapshot.getChildren())
+                    {
+                        String key=ds.getKey();
+                        Log.d("checkkey",key);
+                        Customer c=ds.getValue(Customer.class);
+                        CustomerNode customerNode=new CustomerNode(key,c);
+                        customerList.add(customerNode);
+                        customAdapter.notifyDataSetChanged();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+
+    }
+
     public void onResume()
     {
         super.onResume();
@@ -91,6 +128,8 @@ public class HomePage extends AppCompatActivity  {
     }
 
     private void getCustomerData() {
+        sorted=false;
+        customerList.clear();
         customerReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

@@ -9,4 +9,6 @@
     <string name="invalid_lat_long_used">Invalid Latitude and longitude Used</string>
     <string name="no_address_found">No Address Found</string>
     <string name="address_found">Address Found</string>
+    <string name="search">Search</string>
+    <string name="no_result">No Result Found</string>
 </resources>
